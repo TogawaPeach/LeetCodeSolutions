@@ -14,9 +14,11 @@ public class Answer49 {
         HashMap<String, List<String>> map = new HashMap();
         for (int i = 0; i < strs.length; i++) {
             String key = sortWord(strs[i]);
+            //如果是第一次出现这个key，那么value则会创建一个新的arraylist。
             if (!map.containsKey(key)) {
                 map.put(key, new ArrayList<>());
             }
+            //如果不是，则会用add方法加入一个新的单词，即strs[i]
             map.get(key).add(strs[i]);
         }
         return new ArrayList<>(map.values());
